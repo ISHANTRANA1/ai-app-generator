@@ -1,5 +1,10 @@
-export { auth as middleware } from "@/lib/auth";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+export function middleware(request: NextRequest) {
+  return NextResponse.next();
+}
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/app/:path*", "/api/apps/:path*", "/api/generate/:path*"],
+  matcher: [],
 };
